@@ -7,6 +7,8 @@ div.left(v-if="isSignin")
             | Menu
             ul
                 li: router-link(to="/") Home
+                li: router-link(to="/auth/patients") Pacientes
+                li: router-link(to="/auth/professionals") Profissionais
                 li: router-link(to="/auth/patient") Cadastrar paciente
                 li: router-link(to="/auth/professional") Cadastrar profissional de saúde
                 li: router-link(to="/auth/scheduling") Agendamento
@@ -75,9 +77,67 @@ span.exit { cursor: pointer }
         margin-left: 10px;
         background-color: darken($navcolor, 6);
 
+
+        /* Custom, iPhone Retina */ 
+        @media only screen and (min-width : 320px) {
+            li.menu {
+                width: auto;
+            }
+        }
+
+        /* Extra Small Devices, Phones */ 
+        @media only screen and (min-width : 480px) {
+            li.menu {
+                width: auto;
+            }
+        }
+
+        /* Small Devices, Tablets */
+        @media only screen and (min-width : 768px) {
+            li.menu {
+                width: 200px;
+            }
+        }
+
+        /* Medium Devices, Desktops */
+        @media only screen and (min-width : 992px) {
+
+        }
+
+        /* Large Devices, Wide Screens */
+        @media only screen and (min-width : 1200px) {
+
+        }
+
+        /*==========  Non-Mobile First Method  ==========*/
+
+        /* Large Devices, Wide Screens */
+        @media only screen and (max-width : 1200px) {
+
+        }
+
+        /* Medium Devices, Desktops */
+        @media only screen and (max-width : 992px) {
+
+        }
+
+        /* Small Devices, Tablets */
+        @media only screen and (max-width : 768px) {
+
+        }
+
+        /* Extra Small Devices, Phones */ 
+        @media only screen and (max-width : 480px) {
+
+        }
+
+        /* Custom, iPhone Retina */ 
+        @media only screen and (max-width : 320px) {
+
+        }        
+
         li.menu {
 
-            width: 200px;
             position: relative;
             background: inherit;
             border-right: 1px solid $navcolor;

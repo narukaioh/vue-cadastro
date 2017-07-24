@@ -6,6 +6,8 @@ import Login from '../app/components/Login.vue'
 import SchedulingRegister from '../app/components/SchedulingRegister.vue'
 import PatientRegister from '../app/components/PatientRegister.vue'
 import ProfessionalRegister from '../app/components/ProfessionalRegister.vue'
+import Patients from '../app/components/Patients.vue'
+import Professionals from '../app/components/Professionals.vue'
 
 Vue.use(Router)
 
@@ -15,6 +17,8 @@ const meta = {
 
 const routes = [
     { name: 'home', path: '/', component: Login },
+    { name: 'consult', path: '/auth/patients', component: Patients, meta },
+    { name: 'consult', path: '/auth/professionals', component: Professionals, meta },
     { name: 'consult', path: '/auth/scheduling', component: SchedulingRegister, meta },
     { name: 'patient', path: '/auth/patient', component: PatientRegister, meta },
     { name: 'professional', path: '/auth/professional', component: ProfessionalRegister, meta }

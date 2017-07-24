@@ -5,6 +5,8 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import moment from 'moment'
+import ElementUI from 'element-ui'
+//import 'element-ui/lib/theme-default/index.css'
 import VeeValidate from 'vee-validate'
 import { Validator } from 'vee-validate'
 import { VueMaskDirective } from 'v-mask'
@@ -12,9 +14,9 @@ import VeeValidateMessagesBR from "vee-validate/dist/locale/pt_BR";
 
 Validator.installDateTimeValidators(moment)
 
-VeeValidate.Validator.addLocale(VeeValidateMessagesBR);
-Vue.use(VeeValidate, {locale: 'pt_BR'});
-
+VeeValidate.Validator.addLocale(VeeValidateMessagesBR)
+Vue.use(VeeValidate, {locale: 'pt_BR'})
+Vue.use(ElementUI)
 Vue.directive('mask', VueMaskDirective)
 
 new Vue({
