@@ -6,9 +6,9 @@ div.right(v-if="!isSignin")
         form
             fieldset
                 p.error(v-if="message") {{message}}
-                p: input(type="text", v-model="user.login", placeholder="Login")
-                p: input(type="password" v-model="user.password", placeholder="Senha")
-                p: button(type="button" @click="signin(user)") Logar
+                p: .inputbox: input(type="text", v-model="user.login", placeholder="Login")
+                p: .inputbox: input(type="password" v-model="user.password", placeholder="Senha")
+                p: button(class="btn", type="button" @click="signin(user)") Logar
 
 scheduling-register(v-else)
 

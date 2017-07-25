@@ -1,12 +1,16 @@
 <template lang="pug">
 div
   main-menu
+  //collapse-menu
+  //menu-nav
   router-view
 </template>
 
 <script>
 
 import Menu from './app/components/Menu.vue'
+import MenuCollapse from './app/components/MenuCollapse.vue'
+import MenuNav from './app/components/MenuNav.vue'
 import { mapState } from 'vuex'
 export default {
   name: 'app',
@@ -15,7 +19,9 @@ export default {
     }
   },
   components: {
-    'main-menu': Menu
+    'main-menu': Menu,
+    'collapse-menu': MenuCollapse,
+    'menu-nav': MenuNav
   }
 }
 </script>
