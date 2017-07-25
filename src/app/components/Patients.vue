@@ -15,8 +15,8 @@ div.right
                     td {{ paciente.nome }}
                     td {{ paciente.datanasc }}
                     td {{ paciente.email }}
-                    td: button Editar
-                    td: button Excluir
+                    td: button.btn Editar
+                    td: button.btn Excluir
 
 </template>
 

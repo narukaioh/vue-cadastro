@@ -13,8 +13,8 @@ div.right
                 tr(v-for="profissional in Profissionais")
                     td {{ profissional.nome }}
                     td {{ profissional.especialidade }}
-                    td: button Editar
-                    td: button Excluir
+                    td: button.btn Editar
+                    td: button.btn Excluir
 
 </template>
 

@@ -39,6 +39,7 @@ div.right
 <script>
 
 import Calendar from './Calendar.vue'
+import Calendario from './Calendario.vue'
 
 export default {
         data (){
@@ -62,7 +63,8 @@ export default {
                 }
         },
         components: {
-                'calendar': Calendar
+                'calendar': Calendar,
+                'calendario': Calendario
         }
 }
 

@@ -8,13 +8,13 @@ div.right
                 p Os campos * são obrigatórios
                 p(:class="{ 'control': true }")
                     label(for="nome", :class="{'input': true, 'is-danger': errors.has('nome') }") Nome*
-                    div
+                    .inputbox
                         input(name="nome", v-model="paciente.nome", type="text", placeholder="Nome", v-validate="'required'",  :class="{'input': true, 'is-danger': errors.has('nome') }" )
                         span(v-show="nomeFlags.invalid", class="help is-danger") {{ errors.first('nome') }}
 
                 p(:class="{ 'control': true }")
                     label(for="genero", :class="{'input': true, 'is-danger': errors.has('genero') }") Genero*
-                    div(class="select-wrapper", :class="{ 'is-danger': errors.has('genero') }")
+                    .inputbox(class="select-wrapper", :class="{ 'is-danger': errors.has('genero') }")
                         select(v-model="paciente.genero", name="genero", v-validate="'required'", placeholder="Genero")
                             option(value="")
                             option(value="F") Feminino
@@ -23,22 +23,22 @@ div.right
 
                 p(:class="{ 'control': true }")
                     label(for="datanasc", :class="{'input': true, 'is-danger': errors.has('datanasc')} ") Data de nascimento*
-                    div
+                    .inputbox
                         input(name="datanasc", v-model="paciente.datanasc", type="text", placeholder="Data de nascimento", v-validate="'required'",  :class="{'input': true, 'is-danger': errors.has('datanasc') }" )
                         span(v-show="datanascFlags.invalid", class="help is-danger") {{ errors.first('datanasc') }}
 
 
                 p
                     label(for="email") Email
-                    div: input(name="email", v-model="paciente.email", type="text", placeholder="Email")
+                    .inputbox: input(name="email", v-model="paciente.email", type="text", placeholder="Email")
                 p
                     label(for="indicacao") Indicação
-                    div: input(name="indicacao", v-model="paciente.indicacao", type="text", placeholder="Indicação")
+                    .inputbox: input(name="indicacao", v-model="paciente.indicacao", type="text", placeholder="Indicação")
                 p
                     label(for="contato") Contato
-                    div: input(name="contato", v-model="paciente.contato", type="text", placeholder="Contato")
+                    .inputbox: input(name="contato", v-model="paciente.contato", type="text", placeholder="Contato")
 
-                p: button(type="button" @click="submit(paciente)" ) Cadastrar
+                p: button(class="btn", type="button" @click="submit(paciente)" ) Cadastrar
 
 </template>
 <script type="javascript">

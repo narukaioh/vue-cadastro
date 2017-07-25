@@ -8,13 +8,13 @@ div.right
                 p Os campos * são obrigatórios
                 p
                     label(for="nome", :class="{ 'is-danger': errors.has('nome') }") Nome*
-                    div: input(name="nome", v-model="profissional.nome", v-validate="'required'", :class="{ 'is-danger': errors.has('nome') }", type="text", placeholder="Nome")
+                    .inputbox: input(name="nome", v-model="profissional.nome", v-validate="'required'", :class="{ 'is-danger': errors.has('nome') }", type="text", placeholder="Nome")
                     span(v-show="nomeFlags.invalid", class="help is-danger") {{ errors.first('nome') }}
                 p
                     label(for="especialidade", :class="{ 'is-danger': errors.has('especialidade') }") Especialidade*
-                    div: input(name="especialidade", v-model="profissional.especialidade", v-validate="'required'", :class="{ 'is-danger': errors.has('especialidade') }", type="text", placeholder="Especialidade")
+                    .inputbox: input(name="especialidade", v-model="profissional.especialidade", v-validate="'required'", :class="{ 'is-danger': errors.has('especialidade') }", type="text", placeholder="Especialidade")
                     span(v-show="especialidadeFlags.invalid", class="help is-danger") {{ errors.first('especialidade') }}
-                p: button(type="submit") Cadastrar
+                p: button(class="btn", type="submit") Cadastrar
 
 </template>
 
