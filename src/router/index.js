@@ -17,8 +17,8 @@ const meta = {
 
 const routes = [
     { name: 'home', path: '/', component: Login },
-    { name: 'consult', path: '/auth/patients', component: Patients, meta },
-    { name: 'consult', path: '/auth/professionals', component: Professionals, meta },
+    { name: 'patients', path: '/auth/patients', component: Patients, meta },
+    { name: 'professionals', path: '/auth/professionals', component: Professionals, meta },
     { name: 'consult', path: '/auth/scheduling', component: SchedulingRegister, meta },
     { name: 'patient', path: '/auth/patient', component: PatientRegister, meta },
     { name: 'professional', path: '/auth/professional', component: ProfessionalRegister, meta }

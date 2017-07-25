@@ -2,7 +2,7 @@
 div.right
     .box
         h1 Pacientes
-        table
+        table.list
             thead
                 tr
                     th Nome
