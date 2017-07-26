@@ -2,21 +2,15 @@
 div.right
     .box
         h1 Pacientes
-        table.list
-            thead
-                tr
-                    th Nome
-                    th Data de nascimento
-                    th Email
-                    th Editar
-                    th Excluir
-            tbody
-                tr(v-for="paciente in pacientes")
-                    td {{ paciente.nome }}
-                    td {{ paciente.datanasc }}
-                    td {{ paciente.email }}
-                    td: button.btn Editar
-                    td: button.btn Excluir
+        el-table(:data='pacientes', style='width: 100%')
+            el-table-column(prop='nome', label='Nome')
+            el-table-column(prop='datanasc', label='Data de nascimento')
+            el-table-column(prop='email', label='Email')
+
+            el-table-column(label='Operations')
+                template(scope='scope')
+                    el-button(size='small', @click='handleEdit(scope.$index, scope.row)') Edit
+                    el-button(size='small', type='danger', @click='handleDelete(scope.$index, scope.row)') Delete
 
 </template>
 
@@ -39,6 +33,12 @@ export default {
     methods: {
         getPacientes() {
             console.log('get().then(data=> data.result)')
+        },
+        handleEdit(index, row){
+            console.log(index, row)
+        },
+        handleDelete(index, row){
+            console.log(index, row)
         }
     }
 }

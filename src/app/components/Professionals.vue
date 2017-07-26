@@ -2,19 +2,14 @@
 div.right
     .box
         h1 Profissionais
-        table
-            thead
-                tr
-                    th Nome
-                    th Especialidade
-                    th Editar
-                    th Excluir
-            tbody
-                tr(v-for="profissional in Profissionais")
-                    td {{ profissional.nome }}
-                    td {{ profissional.especialidade }}
-                    td: button.btn Editar
-                    td: button.btn Excluir
+        el-table(:data='profissionais', style='width: 100%')
+            el-table-column(prop='nome', label='Nome')
+            el-table-column(prop='especialidade', label='Data de nascimento')
+            el-table-column(label='Operations')
+                template(scope='scope')
+                    el-button(size='small', @click='handleEdit(scope.$index, scope.row)') Edit
+                    el-button(size='small', type='danger', @click='handleDelete(scope.$index, scope.row)') Delete
+
 
 </template>
 
@@ -22,7 +17,7 @@ div.right
 export default {
     data () {
         return {
-            Profissionais: [
+            profissionais: [
                 { nome: 'João Silva Ferreira', especialidade: 'Nutricionista' },
                 { nome: 'Dona Irene', especialidade: 'Nutricionista'},
                 { nome: 'Pedro Francisco', especialidade: 'Oftamologista'},
@@ -37,7 +32,9 @@ export default {
     methods: {
         getProfissionais() {
             console.log('get().then(data=> data.result)')
-        }
+        },
+        handleEdit(index, row) {},
+        handleDelete(index, row) {}
     }
 }
 </script>
